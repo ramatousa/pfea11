@@ -39,3 +39,21 @@ pipeline {
     }
   }
 }
+ post {
+    success {
+      emailext subject: 'Sujet : Reussite du pipeline Jenkins',
+               body: '''Le pipeline Jenkins s'est exécuté avec succès. 
+                        Tout s'est déroulé sans erreur.
+                        Voici le lien de l'application si vous souhaitez le consulter : https://pfea8.azurewebsites.net/
+                     ''',
+               to: 'abdelkarimsemlali67@gmail.com, mohamedelkaddiri@gmail.com, alidihaji@gmail.com, chaimaebahij4@gmail.com'
+    }
+    failure {
+      emailext subject: 'Sujet : Echec du pipeline Jenkins',
+               body: '''Le pipeline Jenkins a échoué. 
+                        Veuillez prendre les mesures nécessaires pour résoudre le problème.
+                     ''',
+               to: 'abdelkarimsemlali67@gmail.com, mohamedelkaddiri@gmail.com, alidihaji@gmail.com, chaimaebahij4@gmail.com'
+    }
+  }
+}

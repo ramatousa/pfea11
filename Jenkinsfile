@@ -49,7 +49,7 @@ pipeline {
                to: 'abdelkarimsemlali67@gmail.com, mohamedelkaddiri@gmail.com, alidihaji@gmail.com, chaimaebahij4@gmail.com'
     }
     failure {
-      emailext subject: 'Sujet : Echec du pipeline Jenkins',
+      emailext subject: 'Sujet : Echec du pipelinee Jenkins',
                body: '''Le pipeline Jenkins a échoué. 
                         Veuillez prendre les mesures nécessaires pour résoudre le problème.
                      ''',

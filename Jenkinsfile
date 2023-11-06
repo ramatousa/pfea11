@@ -37,14 +37,4 @@ pipeline {
       }
     }
   }
-
-  post {
-   
-    
-    failure {
-      mail bcc: '', body: '''Le pipeline Jenkins a echoue. 
-      Veuillez prendre les mesures nécessaires pour resoudre le probleme.
-      ''', subject: 'Sujet : Echec du pipeline Jenkins', to: 'abdelkarimsemlali67@gmail.com, mohamedelkaddiri@gmail.com, alidihaji@gmail.com, chaimaebahij4@gmail.com'
-    }
-  }
 }

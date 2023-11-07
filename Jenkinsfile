@@ -38,7 +38,7 @@ pipeline {
       }
     }
   }
-}
+
  post {
     success {
       emailext subject: 'Sujet : Reussite du pipeline Jenkins',

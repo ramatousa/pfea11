@@ -46,7 +46,7 @@ pipeline {
                         Tout s'est déroulé sans erreur.
                         Voici le lien de l'application si vous souhaitez le consulter : https://pfea8.azurewebsites.net/
                      ''',
-               to: 'abdelkarimsemlali67@gmail.com, mohamedelkaddiri@gmail.com, alidihaji@gmail.com, chaimaebahij4@gmail.com'
+               to: 'salamhassanesaibou@gmail.com, alidihaji@gmail.com, chaimaebahij4@gmail.com'
     }
     failure {
       emailext subject: 'Sujet : Echec du pipelinee Jenkins',

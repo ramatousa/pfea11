@@ -32,3 +32,4 @@ Before proceeding with the installation, ensure that the following software is i
    ```
    http://localhost:8100
    ```
+   bonjour

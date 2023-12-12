@@ -31,6 +31,27 @@ pipeline {
         bat 'docker-compose push'
       }
     }
+stage('Deploy to EC2') {
+  steps {
+    script {
+      // Copier le fichier docker-compose.yml sur l'instance EC2
+      sh "scp -i ${EC2_SSH_KEY} -o StrictHostKeyChecking=no ${DOCKER_COMPOSE_FILE} ${EC2_USER}@${EC2_HOST}:~/docker-compose.yml"
+
+      // Exécuter les commandes Docker Compose sur l'instance EC2
+      sshCommand remote: [
+        allowAnyHosts: true,
+        credentialsId: '',
+        port: 22,
+        remote: "${EC2_USER}@${EC2_HOST}",
+        command: """
+                  cd ~
+                  docker-compose pull
+                  docker-compose up -d
+                  """
+      ]
+    }
+  }
+}
 
     stage('Cleanup') {
       steps {
